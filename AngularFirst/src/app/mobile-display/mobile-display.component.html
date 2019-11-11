@@ -1,0 +1,23 @@
+<h1>Stock List</h1>
+<table>
+    <thead>
+        <tr>
+            <th> # </th>
+            <th> Company </th>
+            <th> Model Number </th>
+            <th> Quantity </th>
+            <th> Buy / Remove </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mobile of app.mobiles; let i=index">
+            <td> {{i+1}} </td>
+            <td> {{mobile.name}} </td>
+            <td> {{mobile.modelnumber}} </td>
+            <td> {{mobile.quantity}} </td>
+            <td> <button class="btn btn-sm btn-success" (click)="buyPhone(i)">Buy</button>
+            <button class="btn btn-sm btn-danger" (click)="deletePhone(i)">Delete</button> </td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="addPhone()">Add a Phone</button>

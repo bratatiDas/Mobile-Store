@@ -1,0 +1,68 @@
+<h1>Add New Phone</h1>
+<!-- {{cname}},{{mnumber}},{{qty}} -->
+<form #newPhone="ngForm" (submit)="submitPhone($event)" novalidate>
+    <table style="width: 100%">
+        <tr>
+            <td>
+                Company:
+            </td>
+            <td>
+                <input type="text" name="company" #company="ngModel" [(ngModel)]="cname" required>
+                <small class="text-danger" *ngIf="!company.valid && company.touched">Company is required</small>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Model Number:
+            </td>
+            <td>
+                <input type="text" name="mnumber" #number="ngModel" [(ngModel)]="mnumber" required>
+                <small class="text-danger" *ngIf="!number.valid && number.touched">Model Number is required</small>  
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Quantity:
+            </td>
+            <td>
+                <input type="number" name="qty" #quantity="ngModel" [(ngModel)]="qty" required>
+                <small class="text-danger" *ngIf="!quantity.valid && quantity.touched">Quantity is required</small> 
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-primary btn-sm" [disabled]="!newPhone.form.valid" type="submit">Add</button>
+</form>
+
+<h1>Increase Stock of Existing Phone</h1>
+<form #oldPhone="ngForm" (submit)="updatePhone($event)" novalidate>
+    <table style="width: 100%">
+        <tr>
+            <td>
+                Model Number:
+            </td>
+            <td>
+                <input type="text" name="mnumber" #number2="ngModel" [(ngModel)]="mnumber2" (input)="searchPhone()" required>
+                <small class="text-danger" *ngIf="!number2.valid && number2.touched">Model Number is required</small>  
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Company:
+            </td>
+            <td>
+                <input type="text" name="company" #company2="ngModel" [(ngModel)]="cname2" required>
+                <small class="text-danger" *ngIf="!company2.valid && company2.touched">Company is required</small>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Quantity:
+            </td>
+            <td>
+                <input type="number" name="qty" #quantity2="ngModel" [(ngModel)]="qty2" required>
+                <small class="text-danger" *ngIf="!quantity2.valid && quantity2.touched">Quantity is required</small> 
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-primary btn-sm" [disabled]="!oldPhone.form.valid" type="submit">Add Stock</button>
+</form>
