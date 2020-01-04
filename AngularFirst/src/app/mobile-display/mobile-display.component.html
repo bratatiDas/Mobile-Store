@@ -7,6 +7,7 @@
             <th> Model Number </th>
             <th> Quantity </th>
             <th> Buy / Remove </th>
+            <th> QR Code </th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,9 @@
             <td> {{mobile.quantity}} </td>
             <td> <button class="btn btn-sm btn-success" (click)="buyPhone(i)">Buy</button>
             <button class="btn btn-sm btn-danger" (click)="deletePhone(i)">Delete</button> </td>
+            <td>
+                    <qr-code [value]="'DebanjanDasMahapatra'" [size]="250"></qr-code>
+             </td>
         </tr>
     </tbody>
 </table>

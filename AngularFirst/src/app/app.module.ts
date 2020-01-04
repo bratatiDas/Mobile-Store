@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MobileDisplayComponent } from './mobile-display/mobile-display.component';
 import { MobileEntryComponent } from './mobile-entry/mobile-entry.component';
+import { QRCodeModule } from 'angular2-qrcode';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MobileEntryComponent } from './mobile-entry/mobile-entry.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
